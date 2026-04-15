@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrowseHub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    .search-box {
+      margin: 20px auto;
+      max-width: 500px;
+      display: flex;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px 0 0 6px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 12px 20px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #e5e7eb;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>  <header>
+    <h1>BrowseHub</h1>
+    <p>Simple website for browsing content</p>
+  </header>  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search items..." />
+    <button onclick="searchItems()">Search</button>
+  </div>  <div class="container" id="itemsContainer">
+    <div class="card">
+      <h3>Technology</h3>
+      <p>Browse latest tech news and updates.</p>
+    </div>
+    <div class="card">
+      <h3>Education</h3>
+      <p>Learning resources and study materials.</p>
+    </div>
+    <div class="card">
+      <h3>Entertainment</h3>
+      <p>Movies, music, and trending content.</p>
+    </div>
+    <div class="card">
+      <h3>Sports</h3>
+      <p>Live scores and sports updates.</p>
+    </div>
+  </div>  <footer>

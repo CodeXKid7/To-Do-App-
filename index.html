@@ -1,92 +1,43 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BrowseHub</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-    }
-    header {
-      background: #1e293b;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-    }
-    .search-box {
-      margin: 20px auto;
-      max-width: 500px;
-      display: flex;
-    }
-    .search-box input {
-      flex: 1;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px 0 0 6px;
-      outline: none;
-    }
-    .search-box button {
-      padding: 12px 20px;
-      border: none;
-      background: #2563eb;
-      color: white;
-      border-radius: 0 6px 6px 0;
-      cursor: pointer;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-      padding: 15px;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin: 0 0 10px;
-    }
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #e5e7eb;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNG Frontend Wizards - Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>  <header>
-    <h1>BrowseHub</h1>
-    <p>Simple website for browsing content</p>
-  </header>  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search items..." />
-    <button onclick="searchItems()">Search</button>
-  </div>  <div class="container" id="itemsContainer">
-    <div class="card">
-      <h3>Technology</h3>
-      <p>Browse latest tech news and updates.</p>
-    </div>
-    <div class="card">
-      <h3>Education</h3>
-      <p>Learning resources and study materials.</p>
-    </div>
-    <div class="card">
-      <h3>Entertainment</h3>
-      <p>Movies, music, and trending content.</p>
-    </div>
-    <div class="card">
-      <h3>Sports</h3>
-      <p>Live scores and sports updates.</p>
-    </div>
-  </div>  <footer>
+<body>
+
+<div class="container">
+    <form class="task-form" id="todoForm" data-testid="test-todo-form">
+        <h2 id="formTitle">Manage Tasks</h2>
+        <input type="hidden" id="editId">
+        
+        <input type="text" id="inputTitle" placeholder="Task Title" required data-testid="test-todo-title-input">
+        <textarea id="inputDesc" placeholder="Task Description..." rows="2" required data-testid="test-todo-description-input"></textarea>
+        
+        <div class="grid">
+            <div>
+                <label>Priority</label>
+                <select id="inputPriority" data-testid="test-todo-priority-select">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div>
+                <label>Due Date</label>
+                <input type="datetime-local" id="inputDateTime" required data-testid="test-todo-due-date-input">
+            </div>
+        </div>
+        
+        <button type="submit" class="btn-main" id="submitBtn">Add Task</button>
+        <button type="button" id="cancelEdit" class="cancel-btn">Cancel Edit</button>
+    </form>
+
+    <div id="todoList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
